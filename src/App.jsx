@@ -5,7 +5,7 @@ import {
   Calendar, 
   Settings, 
   Activity, 
-  GitGraph, 
+  GitBranch, 
   Disc, 
   Fuel, 
   FileText, 
@@ -291,7 +291,7 @@ export default function App() {
       filename: `Cotizacion-${formData.quoteId}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true }, 
-      jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' } // CAMBIO: 'letter' en lugar de 'a4'
+      jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' } 
     };
 
     window.html2pdf().set(opt).from(element).save().then(() => {
@@ -565,7 +565,7 @@ export default function App() {
                { icon: Calendar, label: "Año", val: formData.year },
                { icon: Truck, label: "Modelo", val: formData.model },
                { icon: Settings, label: "Motor", val: formData.engineShort },
-               { icon: GitGraph, label: "Transmisión", val: formData.transmissionShort },
+               { icon: GitBranch, label: "Transmisión", val: formData.transmissionShort },
                { icon: Disc, label: "Ejes", val: formData.axles },
                { icon: Activity, label: "Suspensión", val: formData.suspensionShort },
              ].map((item, i) => (
